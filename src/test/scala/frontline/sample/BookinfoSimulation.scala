@@ -1,4 +1,5 @@
 
+package frontline.sample
 
 import scala.concurrent.duration._
 
