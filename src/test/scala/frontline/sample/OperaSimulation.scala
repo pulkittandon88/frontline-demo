@@ -1,3 +1,6 @@
+
+package frontline.sample
+
 import scala.concurrent.duration._
 
 import io.gatling.core.Predef._
@@ -5,7 +8,7 @@ import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
 import scala.util.Random
 
-class OperaTestSimulation  extends Simulation {
+class OperaSimulation  extends Simulation {
 
         val httpProtocol = http
                 .baseUrl("https://opera-test-public.staging.volterra.us")
