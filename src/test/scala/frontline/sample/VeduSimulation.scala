@@ -22,7 +22,7 @@ class VeduSimulation  extends Simulation {
           .check(status.is(200))
                 )
       }
-    }​
+    }
 
     //val scn = scenario("BookinfoSimulation")
     //  .exec(getProductpage())
