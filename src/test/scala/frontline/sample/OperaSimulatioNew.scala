@@ -11,7 +11,7 @@ import scala.util.Random
 class OperaSimulationNew  extends Simulation {
 
         val httpProtocol = http
-                .baseUrl("https://opera-test-public.staging.volterra.us")
+                .baseUrl("https://opera-test-public.staging-test.illusionsdraw.com/")
                 .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefo/88.0")
                 .disableCaching
                 .disableFollowRedirect
@@ -21,7 +21,7 @@ class OperaSimulationNew  extends Simulation {
     def getBasepage() = {
       repeat(1) {
         exec(http("Get Base Page")
-          .get("")
+          .get("/")
           .headers(Map("testheader" -> "${testheader}", "Connection" -> "close"))
           .check(status.is(200))
                 )
