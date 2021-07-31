@@ -8,7 +8,7 @@ import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
 import scala.util.Random
 
-class OperaSimulation  extends Simulation {
+class OperaSimulationNew  extends Simulation {
 
         val httpProtocol = http
                 .baseUrl("https://opera-test-public.staging.volterra.us")
