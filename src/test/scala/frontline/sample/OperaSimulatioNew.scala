@@ -14,7 +14,7 @@ class OperaSimulationNew  extends Simulation {
                 .baseUrl("https://opera-test-public.staging.volterra.us")
                 .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefo/88.0")
                 .disableCaching
-                .disableFollowRedirect
+                .strict302Handling
         val feeder = Iterator.continually(Map("testheader" -> (Random.alphanumeric.take(20).mkString + "@foo.com")))
 
 
