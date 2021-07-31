@@ -14,14 +14,14 @@ class OperaSimulationNew  extends Simulation {
                 .baseUrl("https://opera-test-public.staging.volterra.us")
                 .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefo/88.0")
                 .disableCaching
-                .strict302Handling
+                .disableFollowRedirect
         val feeder = Iterator.continually(Map("testheader" -> (Random.alphanumeric.take(20).mkString + "@foo.com")))
 
 
     def getBasepage() = {
       repeat(1) {
         exec(http("Get Base Page")
-          .get("/")
+          .get("")
           .headers(Map("testheader" -> "${testheader}", "Connection" -> "close"))
           .check(status.is(200))
                 )
