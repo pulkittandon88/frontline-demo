@@ -43,8 +43,8 @@ class OperaSimulationNew  extends Simulation {
 
         setUp(
                   scn.inject(
-                  rampUsers(5000) during (10 seconds).
-                  constantUsersPerSec(5000) during(110 seconds)
+                  rampUsers(5000) during (10 seconds),
+                  constantUsersPerSec(5000) during (110 seconds)
                   ).protocols(httpProtocol)
         )
 
