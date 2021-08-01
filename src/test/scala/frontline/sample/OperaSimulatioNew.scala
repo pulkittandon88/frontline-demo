@@ -39,16 +39,14 @@ class OperaSimulationNew  extends Simulation {
 
         val scn = scenario("Fixed Duration Load Simulation")
           .feed(feeder)
-          .forever() {
-               exec(getBasepage())
-          }
+          .exec(getBasepage())
 
         setUp(
                   scn.inject(
-                  constantUsersPerSec(100) during (5 seconds)
+                  constantUsersPerSec(100) during (60 seconds)
                   ).protocols(httpProtocol)
         ).throttle(
-        reachRps(4000).in(1.minute),
+        reachRps(12000).in(1.minute),
         holdFor(1.minute),
     )
 
