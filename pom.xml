@@ -28,7 +28,7 @@
   </dependencies>
 
   <build>
-    <testSourceDirectory>user-files</testSourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
     <plugins>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
