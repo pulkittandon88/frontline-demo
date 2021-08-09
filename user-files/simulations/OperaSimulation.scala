@@ -1,5 +1,5 @@
 
-package frontline.sample
+package simulations
 
 import scala.concurrent.duration._
 
