@@ -6,6 +6,10 @@ WORKDIR /opt
 # Gating version
 ENV GATLING_VERSION 3.6.0
 
+# set environment variables
+ENV PATH /opt/gatling/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV GATLING_HOME /opt/gatling
+
 # create directory for gatling install
 RUN mkdir -p gatling
 
@@ -20,9 +24,7 @@ RUN mkdir -p /tmp/downloads && \
 # change context to gatling directory
 WORKDIR  /opt/gatling
 
+ADD src $GATLING_HOME/src/
+ADD src/test/resources/gatling.conf $GATLING_HOME/conf/gatling.conf
 # set directories below to be mountable from host
-VOLUME ["/opt/gatling/results","/opt/gatling/user-files"]
-
-# set environment variables
-ENV PATH /opt/gatling/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ENV GATLING_HOME /opt/gatling
+VOLUME ["/opt/gatling/results", "/opt/gatling/src"]
